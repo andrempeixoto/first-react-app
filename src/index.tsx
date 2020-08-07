@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+
+// the component's sintax is the same of the HTML/XML,
+// and its name has to start with a capital Letter;
+// so it can be recognized inside the HTML as a component 
+// as the <App /> example below
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,8 +13,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
