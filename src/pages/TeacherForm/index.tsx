@@ -4,7 +4,7 @@ import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
 import Select from '../../components/Select';
-import { subjects } from '../../components/Select/data';
+import { subjects, weekdays } from '../../components/Select/data';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
 
@@ -36,6 +36,28 @@ function TeacherForm() {
             options={subjects}
           />
           <Input name="price" label="Price (per hour)"/>
+        </fieldset>
+
+        <fieldset>
+          <legend>
+            Available spots
+            <button type="button">+ Add time</button>
+          </legend>
+
+          <div className="schedule-item">
+            <Select 
+              name="week-day"
+              label="Week Day"
+              options={weekdays}
+            />
+            <div className="schedule-item-time">
+              <Input name="from" label="From:" type="time"/>
+              <Input name="to" label="To:" type="time"/>
+            </div>
+            
+
+          </div>
+
         </fieldset>
 
         <footer>

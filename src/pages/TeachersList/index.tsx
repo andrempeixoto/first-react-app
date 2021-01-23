@@ -16,7 +16,6 @@ function TeachersList() {
         <form id="search-teachers">
           <Select name="subject" label="Subject" options={subjects}/>
           <Select name="week-day" label="Week day" options={weekdays}/>
-          {/* <Input name="week-day" label="Week day"/> */}
           <Input name="time" label="Time" type="time"/>
         </form>
       </PageHeader>
