@@ -2,11 +2,12 @@ import React from 'react';
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
+import Textarea from '../../components/Textarea';
+import Select from '../../components/Select';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
 
 import './styles.css';
-import Textarea from '../../components/Textarea';
 
 function TeacherForm() {
   return (
@@ -27,7 +28,7 @@ function TeacherForm() {
 
         <fieldset>
           <legend>The class you'll teach</legend>
-          <Input name="subject" label="Subject"/>
+          <Select name="subject" label="Subject"/>
           <Input name="price" label="Price (per hour)"/>
         </fieldset>
 
