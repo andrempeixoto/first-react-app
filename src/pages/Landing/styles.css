@@ -1,21 +1,21 @@
 #page-landing {
   width: 100vw;
   height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: var(--color-text-in-primary);
   background: var(--color-primary);
 }
 
 .logo-container img {
-  height: 10rem;
+  height: 8rem;
 }
 
 .hero-image {
-  width: 100%;
+  display: block;
+  margin: auto;
+  width: 85%;
 }
 
 .logo-container {
@@ -77,7 +77,6 @@
 
 .total-connections {
   font-size: 1.6rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,10 +86,9 @@
   margin-left: 0.8rem;
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 960px) {
   #page-landing-content {
-    max-width: 1100px;
-
+    max-width: 960px;
     display: grid;
     grid-template-rows: 350px 1fr;
     grid-template-columns: 2fr 1fr 1fr;
