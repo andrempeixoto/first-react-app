@@ -4,10 +4,12 @@ import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
 import Select from '../../components/Select';
+import { subjects } from '../../components/Select/data';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
 
 import './styles.css';
+
 
 function TeacherForm() {
   return (
@@ -28,7 +30,11 @@ function TeacherForm() {
 
         <fieldset>
           <legend>The class you'll teach</legend>
-          <Select name="subject" label="Subject"/>
+          <Select
+            name="subject"
+            label="Subject"
+            options={subjects}
+          />
           <Input name="price" label="Price (per hour)"/>
         </fieldset>
 
