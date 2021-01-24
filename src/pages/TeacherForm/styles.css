@@ -70,6 +70,10 @@
   margin-top: 1.4rem;
 }
 
+#page-teacher-form .schedule-item + .schedule-item {
+  margin-top: 2.4rem;
+}
+
 #page-teacher-form main footer {
   padding: 4rem 2.4rem;
   background: var(--color-box-footer);
@@ -127,7 +131,11 @@
   }
 
   #page-teacher-form .schedule-item-time .input-block {
-    margin-top: 0 !important ;
+    margin-top: 0;
+  }
+
+  #page-teacher-form .schedule-item + .schedule-item {
+    margin-top: 2.4rem;
   }
 
   #page-teacher-form main footer {

@@ -14,40 +14,32 @@ function Landing() {
   return (
     <div id="page-landing">
       <div id="page-landing-content" className="container">
-      
         <div className="logo-container">
-          <img src={logoImg} alt="Proffy"/>
+          <img src={logoImg} alt="Proffy" />
           <h2>Your online learning platform.</h2>
         </div>
 
-        <img 
-          src={landingImg}
-          alt="Learning platform"
-          className="hero-image"
-        />
+        <img src={landingImg} alt="Learning platform" className="hero-image" />
 
         <div className="buttons-container">
-
           <Link to="/learn" className="learn">
-            <img src={studyIcon} alt="Learn"/>
+            <img src={studyIcon} alt="Learn" />
             Learn
           </Link>
 
           <Link to="/teach" className="teach">
-            <img src={giveClassesIcon} alt="Teach"/>
+            <img src={giveClassesIcon} alt="Teach" />
             Teach
           </Link>
-
         </div>
 
         <span className="total-connections">
-          Total of 200 conections already made
-          <img src={purpleHeartIcon} alt="Purple heart"/>
+          Total of 20 conections already made
+          <img src={purpleHeartIcon} alt="Purple heart" />
         </span>
-
       </div>
     </div>
-  )
+  );
 }
 
 export default Landing;

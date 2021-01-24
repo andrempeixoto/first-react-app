@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
@@ -10,8 +10,15 @@ import warningIcon from '../../assets/images/icons/warning.svg';
 
 import './styles.css';
 
-
 function TeacherForm() {
+  const [scheduleItems, setScheduleItems] = useState([
+    { week_day: 0, from: '', to: '' },
+  ]);
+
+  function addNewScheduleItem() {
+    setScheduleItems([...scheduleItems, { week_day: 0, from: '', to: '' }]);
+  }
+
   return (
     <div id="page-teacher-form" className="container">
       <PageHeader
@@ -22,56 +29,48 @@ function TeacherForm() {
       <main>
         <fieldset>
           <legend>Your profile</legend>
-          <Input name="name" label="Full Name"/>
-          <Input name="avatar" label="Avatar"/>
-          <Input name="telegram" label="Telegram"/>
-          <Textarea name="bio" label="Bio"/>
+          <Input name="name" label="Full Name" />
+          <Input name="avatar" label="Avatar" />
+          <Input name="telegram" label="Telegram" />
+          <Textarea name="bio" label="Bio" />
         </fieldset>
 
         <fieldset>
           <legend>The class you'll teach</legend>
-          <Select
-            name="subject"
-            label="Subject"
-            options={subjects}
-          />
-          <Input name="price" label="Price (per hour)"/>
+          <Select name="subject" label="Subject" options={subjects} />
+          <Input name="price" label="Price (per hour)" />
         </fieldset>
 
         <fieldset>
           <legend>
             Available spots
-            <button type="button">+ Add time</button>
+            <button type="button" onClick={addNewScheduleItem}>
+              + Add time
+            </button>
           </legend>
 
-          <div className="schedule-item">
-            <Select 
-              name="week-day"
-              label="Week Day"
-              options={weekdays}
-            />
-            <div className="schedule-item-time">
-              <Input name="from" label="From:" type="time"/>
-              <Input name="to" label="To:" type="time"/>
-            </div>
-            
-
-          </div>
-
+          {scheduleItems.map((scheduleItem) => {
+            return (
+              <div key={scheduleItem.week_day} className="schedule-item">
+                <Select name="week-day" label="Week Day" options={weekdays} />
+                <div className="schedule-item-time">
+                  <Input name="from" label="From:" type="time" />
+                  <Input name="to" label="To:" type="time" />
+                </div>
+              </div>
+            );
+          })}
         </fieldset>
 
         <footer>
           <p>
-            <img src={warningIcon} alt="important notice"/>
-            Important! <br/>
+            <img src={warningIcon} alt="important notice" />
+            Important! <br />
             Fill in all the fields
           </p>
 
-          <button type="button">
-            Save profile
-          </button>
+          <button type="button">Save profile</button>
         </footer>
-
       </main>
     </div>
   );
